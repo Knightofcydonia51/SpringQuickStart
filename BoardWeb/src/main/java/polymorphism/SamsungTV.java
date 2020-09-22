@@ -8,16 +8,16 @@ public class SamsungTV implements TV{
 		System.out.println("==> SamsungTV 梓端 持失");
 	}
 	
-	public SamsungTV(Speaker speaker) {
-		System.out.println("==> SamsungTV(2) 梓端 持失");
-		this.speaker=speaker;
-	}
-	
-	public SamsungTV(Speaker speaker,int price) {
-		System.out.println("==> SamsungTV(3) 梓端 持失");
-		this.speaker=speaker;
-		this.price=price;
-	}
+//	public SamsungTV(Speaker speaker) {
+//		System.out.println("==> SamsungTV(2) 梓端 持失");
+//		this.speaker=speaker;
+//	}
+//	
+//	public SamsungTV(Speaker speaker,int price) {
+//		System.out.println("==> SamsungTV(3) 梓端 持失");
+//		this.speaker=speaker;
+//		this.price=price;
+//	}
 	
 	
 	public void initMethod() {
