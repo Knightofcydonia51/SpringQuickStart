@@ -1,5 +1,0 @@
-INDEX VERSION 1.4+C:\Users\SQNT\Desktop\intern\SpringQuickStart\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3640882626.index
-1526592809.index
-1251843602.index
-3338450723.index
