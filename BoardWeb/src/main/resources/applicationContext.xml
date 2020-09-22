@@ -2,6 +2,21 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-	<bean id="tv" class="polymorphism.SamsungTV"></bean>
+		
+	
+	<bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" scope="singleton">
+		<constructor-arg index="0" ref="apple"></constructor-arg>  
+		<constructor-arg index="1" value="2700000"></constructor-arg>
+		<!-- 생성자 인젝션 
+				ref : bean으로 등록된 다른 객체일 경우
+				value : 고정된 문자열이나 정수 같은 기본 데이터일 경우
+				index : 생성자를 여러 개 오버로딩 했다면 매핑 순서를 정해줄 수 있음.
+		-->
+	</bean>
+	
+	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
+	
+	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+	
 </beans>
+
