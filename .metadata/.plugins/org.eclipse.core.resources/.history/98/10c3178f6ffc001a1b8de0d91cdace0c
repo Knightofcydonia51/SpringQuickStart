@@ -1,0 +1,23 @@
+package com.springbook.biz;
+
+public class TVUser {
+	
+	public static void main(String[] args) {
+		
+//		Interface »ç¿ë½Ã
+//		TV tv = new SamsungTV();
+//		tv.powerOn();
+//		tv.powerOff();
+//		tv.volumeUp();
+//		
+//		
+//		TV tv2 = new LgTV();
+//		tv2.powerOn();
+//		tv2.volumeDown();
+		
+		BeanFactory factory = new BeanFactory();
+		TV tv = (TV)factory.getBean(args[0]);
+		tv.powerOn("samsung");
+		
+	}
+}

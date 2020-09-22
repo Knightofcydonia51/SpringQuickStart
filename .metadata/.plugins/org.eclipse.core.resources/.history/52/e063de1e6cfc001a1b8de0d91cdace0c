@@ -1,0 +1,12 @@
+package com.springbook.biz;
+
+public class TVUser {
+	
+	public static void main(String[] args) {
+		
+		SamsungTV tv = new SamsungTV();
+		tv.poweron();
+		tv.volumeup();
+		tv.poweroff();
+	}
+}
