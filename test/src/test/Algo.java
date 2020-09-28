@@ -1,37 +1,29 @@
 package test;
 
-import java.awt.image.AbstractMultiResolutionImage;
-import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.StringTokenizer;
-
-import sun.security.action.PutAllAction;
-
+import java.util.Comparator;
 
 public class Algo {
 	
 	
 	
-	 public static int[] solution(int[] answers) {
+	 public static ArrayList solution(int[] answers) {
 		 
 	       
-	        
 	        int a = 0;
 	        int b = 0;
 	        int c = 0;
 	        
 	        int[] A = {1,2,3,4,5};
-	        int[] B = {2,1,2,3,2,4,5};
+	        int[] B = {2, 1, 2, 3, 2, 4, 2, 5};
 	        int[] C = {3,3,1,1,2,2,4,4,5,5};
 	        
-	      
-	        
+
 	        for (int i = 0; i < answers.length; i++) {
 	        	if (answers[i]==A[i%A.length]) {
 	        		a+=1;
-	        		System.out.println(a);
 	        	}
 	        	if (answers[i]==B[i%B.length]) {
 	        		b+=1;
@@ -41,19 +33,28 @@ public class Algo {
 	        	}
 	        }
 	        
-	        HashMap<Integer, Integer> num = new HashMap<Integer, Integer>(3);
-	        num.put(1, a);
-	        num.put(2, b);
-	        num.put(3, c);
 	        
-	        System.out.println(num.keySet().toArray());
-//       	 	Arrays.sort(num);
+	        
+	        int [][] num = {{a,1},{b,2},{c,3}};
+	        
+	        Arrays.sort(num,Comparator.comparingInt(o1 -> o1[0]));
+	        
+	        for (int i = 0; i < num.length; i++) {
+				System.out.println(num[i][0]+":"+num[i][1]);
+			}
+	        
+	        ArrayList answer = new ArrayList();
+       	 	 	 
+       	 	for (int i = 0; i < num.length; i++) {
+       	 		if (num[num.length-1][0]==0) {
+       	 			break;
+       	 		}
+       	 		else if (num[num.length -1][0]==num[i][0]) {
+					answer.add(num[i][1]);
+				}
+			}
        	 	
-//       	 	for (int i = 0; i < num.length; i++) {
-//				if (num[num.length -1]==num[i]) {
-//					
-//				}
-//			}
+       	 Collections.sort(answer);
        	 	
 	        return answer;
 	    }
@@ -79,8 +80,8 @@ public class Algo {
 //			System.out.println(a + " " + (b - 45));
 //		}
 		
-		int[] answers= {1,2,3,4,5,1,2};
-		System.out.println(Arrays.toString(solution(answers)));
+		int[] answers= {1,2};
+		System.out.println(solution(answers));
 		
 	}
 
