@@ -18,8 +18,13 @@ public class UserServiceClient {
 		UserVO vo = new UserVO();
 		vo.setId("test");
 		vo.setPassword("test123");
+		vo.setName("관리자");
+		vo.setRole("관리자");
 		
 		UserVO user = userService.getUser(vo);
+		
+		System.out.println(user);
+		
 		if (user != null) {
 			System.out.println(user.getName() + "님 환영합니다.");
 		} else {
